@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        Rock Paper Scissors Game
+
+        1. Create a function that returns the computer's choice, it has to be a random value
+        between "Rock", "Paper" and "Scissors".
+
+        2. Create a functions that plays a single round of rock paper scissors and return
+        a string that declare the winner. The function should take two parameters: the player choice and 
+        the computer choice.
+        */
+        
+        const choices = ["rock", "paper", "scissors"];
+
+        function getComputerChoice() {
+            return choices[Math.floor(Math.random() * choices.length)];
+        }
+        
+        let playerChoice = "rock";
+        let computerChoice = getComputerChoice();
+
+        // Play a single round of the game
+        function playRound(playerChoice, computerChoice) {
+            if (playerChoice.toLowerCase() === computerChoice) {
+                return "Oh, it's a tie!"
+            } else if (playerChoice.toLowerCase() === "rock") {
+                return computerChoice == "paper" ? "You lose, paper beats rock!" : "You win, rock beats scissors!";
+            } else if (playerChoice.toLowerCase() === "paper") {
+                return computerChoice == "scissors" ? "You lose, scissors beats paper!" : "You win, paper beats rock!";
+            } else if (playerChoice.toLowerCase() === "scissors") {
+                return computerChoice == "rock" ? "You lose, rock beats siccors!" : "You win, scissors beats paper!";
+            }
+        }
+    </script>
+</body>
+</html>
