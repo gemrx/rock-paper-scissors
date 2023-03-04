@@ -17,6 +17,9 @@
         2. Create a functions that plays a single round of rock paper scissors and return
         a string that declare the winner. The function should take two parameters: the player choice and 
         the computer choice.
+
+        3. create a functions that plays 5 five rounds of rock paper scissors, the function should take the
+        player choice as an input and display the at the end of the game.
         */
         
         const choices = ["rock", "paper", "scissors"];
@@ -25,21 +28,53 @@
             return choices[Math.floor(Math.random() * choices.length)];
         }
         
-        let playerChoice = "rock";
-        let computerChoice = getComputerChoice();
-
-        // Play a single round of the game
         function playRound(playerChoice, computerChoice) {
             if (playerChoice.toLowerCase() === computerChoice) {
-                return "Oh, it's a tie!"
+                return ["tie", "Oh, it's a tie!"];
             } else if (playerChoice.toLowerCase() === "rock") {
-                return computerChoice == "paper" ? "You lose, paper beats rock!" : "You win, rock beats scissors!";
+                return computerChoice == "paper" ? ["computer", "You lost, paper beats rock!"] : ["player", "You won, rock beats scissors!"];
             } else if (playerChoice.toLowerCase() === "paper") {
-                return computerChoice == "scissors" ? "You lose, scissors beats paper!" : "You win, paper beats rock!";
+                return computerChoice == "scissors" ? ["computer", "You lost, scissors beats paper!"] : ["player", "You won, paper beats rock!"];
             } else if (playerChoice.toLowerCase() === "scissors") {
-                return computerChoice == "rock" ? "You lose, rock beats siccors!" : "You win, scissors beats paper!";
+                return computerChoice == "rock" ? ["computer", "You lost, rock beats siccors!"] : ["player", "You won, scissors beats paper!"];
             }
         }
+
+        function game() {
+            let playerScore = 0;
+            let computerScore = 0;
+
+            for (let i = 0; i < 5; i++) {
+                console.log(`ROUND ${i+1}`)
+                let playerChoice = prompt("Choose your weapon: ");
+                let computerChoice = getComputerChoice();
+                console.log(`Player weapon: ${playerChoice}    Computer weapon: ${computerChoice}`);
+
+                let roundWinner = playRound(playerChoice, computerChoice);
+
+                if (roundWinner[0] === "computer") {
+                    computerScore++;
+                    console.log(roundWinner[1])
+                } else if (roundWinner[0] === "player") {
+                    playerScore++;
+                    console.log(roundWinner[1])
+                } else {
+                    playerScore++;
+                    computerScore++;
+                    console.log(roundWinner[1])
+                }
+            }
+
+            if (playerScore > computerScore) {
+                console.log("Congratulations, you won the game!")
+            } else if (computerScore > playerScore) {
+                console.log( "I'm so sorry, you lost the game...")
+            } else {
+                console.log("Lol, it was a tie game!")
+            }
+        }
+
+        game();
     </script>
 </body>
 </html>
