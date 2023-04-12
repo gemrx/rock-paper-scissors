@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #D8DEE9;
+    color: #2E3440;
+}
+
+
+/* Round Section */
+.title-container {
+    /* border: 2px solid red; */
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container h1 {
+    background-color: #BF616A;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 4px;
+    /* opacity: 0; */
+}
+
+
+/* Score section */
+.score-container {
+    /* border: 2px solid blue; */
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 330px;
+    padding-right: 330px;
+    align-items: start;
+    padding-top: 10px;
+}
+
+.player-score,
+.computer-score {
+    font-weight: 900;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-score p,
+.computer-score p {
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+
+/* Match section */
+.battlefield {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 230px;
+    padding-right: 230px;
+}
+
+.info-container {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.winner-message {
+    font-size: 24px;
+}
+
+.play-again-button {
+    font-size: 16px;
+    font-weight: 700;
+    width: 150px;
+    padding: 20px 30px;
+    align-self: center;
+    background: #B48EAD;
+    border-color: #B48EAD;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    transition: opacity 0.5s ease;
+}
+
+.player-hand {
+    transform: rotateY(180deg);
+}
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 480px;
+    padding-right: 480px;
+    align-items: center;
+}
+
+.choices button {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 30px;
+    background: #EBCB8B;
+    border-color: #EBCB8B;
+    border-radius: 4px;
+    color: #2E3440;
+    transition: opacity 0.5s ease;
+}
+
+.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (hover: hover) {
+    .play-again-button:hover {
+        cursor: pointer;
+    }
+
+    .choices button:hover {
+        cursor: pointer;
+    }
+}
+
+@keyframes shakePlayerHand {
+    0% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    15% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    25% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    35% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    50% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    65% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    75% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    85% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    100% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+
+@keyframes shakeComputerHand {
+    0% {
+        transform: translateY(0px);
+    }
+    15% {
+        transform: translateY(-50px);
+    }
+    25% {
+        transform: translateY(0px);
+    }
+    35% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    65% {
+        transform: translateY(-50px);
+    }
+    75% {
+        transform: translateY(0px);
+    }
+    85% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
